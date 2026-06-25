@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Slider Demo">
+        <div class="slds-p-around_medium">
+             <lightning-slider 
+             min="0"
+             max="100"
+             type="horizontal"
+             label="Volume"
+             value={currentSliderValue}
+             onchange={handleSliderChange}></lightning-slider>
+             <c-child-slider child-slider-value={currentSliderValue} ></c-child-slider>
+
+        </div>
+    </lightning-card>
+    
+</template>

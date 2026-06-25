@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Child Communications">
+        <div class="slds-p-around_medium">
+            <p>
+                This is Child Components !!
+            </p>
+
+           <lightning-input
+            label="Enter your Name"
+            onchange={handleNameChange}>
+           </lightning-input>
+
+           <div class="slds-p-around_medium">
+            <lightning-button 
+            label="Close"
+            variant="destructive" onclick={handleClose}>
+            </lightning-button>
+           </div>
+        </div>
+    </lightning-card>
+</template>

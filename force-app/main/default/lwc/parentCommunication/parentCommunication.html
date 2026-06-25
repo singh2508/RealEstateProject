@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Child to Parent  Communications">
+        <div class="slds-p-around_medium">
+            <p>
+                This is Parent Components !!
+            </p>
+
+            <lightning-button
+            label="Show Child"
+            variant="brand" onclick={handleClick}>
+        </lightning-button>
+
+        <strong>Welcome {name}</strong>
+        <template lwc:if={showChild}>
+            <c-child-communication onclose={handleChildClose}></c-child-communication>
+        </template>
+        </div>
+    </lightning-card>
+</template>

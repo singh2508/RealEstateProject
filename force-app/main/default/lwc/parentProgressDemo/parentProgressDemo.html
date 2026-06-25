@@ -1,0 +1,28 @@
+<template>
+     <lightning-card title="Progress Bar Demo">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid">
+        <lightning-button 
+        class="slds-col" 
+        label="Start" 
+        variant="success"
+        onclick={handleStartClick}>
+    </lightning-button>
+        <lightning-button 
+        class="slds-col" 
+        label="Stop" 
+        variant="destructive"
+        onclick={handleStopClick} >
+    </lightning-button>
+        <lightning-button 
+        class="slds-col" 
+        label="Reset" 
+        variant="brand"
+        onclick={handleResetClick}>
+    </lightning-button>
+            </div>
+            <c-child-progress-demo lwc:ref="child"></c-child-progress-demo>
+        </div>
+    </lightning-card>
+    
+</template>

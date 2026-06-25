@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Child Components">
+        <div class="slds-p-around_medium">
+            <p>
+                This is Child Components !!
+            </p>
+            <div>
+              <!-- Message from Parent: {message}  -->
+
+             // Message details from Array
+              <!--<template for:each={message} for:item="course">
+                <div key={course.Id}>
+                    {course}
+                </div>
+               </template>  --> 
+               //Message details for object Array
+               <template for:each={message} for:item="cars">
+                <div key={cars.Id}></div>
+                {cars.brandName}
+                {cars.YearFounder}
+               </template>
+            </div>
+            </div>
+            </lightning-card>
+    
+</template>
