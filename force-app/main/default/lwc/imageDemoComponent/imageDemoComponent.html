@@ -1,0 +1,14 @@
+<template>
+     <lightning-card title="My Friends">
+        <div class="slds-grid slds-wrap slds-p-around_medium">
+            <template for:each={friends} for:item="friend">
+                <div key={friend.id} class="slds-col slds-size_1-of-2 slds-p-around_small">
+                    <div class="friend-card">
+                        <img src={friend.image} alt={friend.name} class="friend-image"/>
+                        <h3>{friend.name}</h3>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

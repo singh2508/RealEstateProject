@@ -1,0 +1,166 @@
+<template>
+     <template if:true={isLoading}>
+        <lightning-spinner
+            alternative-text="Saving Property..."
+            size="medium">
+        </lightning-spinner>
+    </template>
+    <lightning-card title="Add New Property" icon-name="standard:household">
+
+        <div class="slds-p-around_large">
+
+            <div class="slds-grid slds-wrap slds-gutters">
+
+                <!-- Property Name -->
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-small-size_1-of-1">
+                    <lightning-input
+                        label="Property Name"
+                        name="name"
+                        value={property.name}
+                        required
+                        onchange={handleChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Property Type -->
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-small-size_1-of-1">
+                    <lightning-combobox
+                        label="Property Type"
+                        name="propertyType"
+                        value={property.propertyType}
+                        placeholder="Select Property Type"
+                        options={propertyTypeOptions}
+                        required
+                        onchange={handleChange}>
+                    </lightning-combobox>
+                </div>
+
+                <!-- Price -->
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-small-size_1-of-1">
+                    <lightning-input
+                        type="number"
+                        label="Price"
+                        name="price"
+                        value={property.price}
+                        required
+                        onchange={handleChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Bedrooms -->
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-small-size_1-of-1">
+                    <lightning-input
+                        type="number"
+                        label="Bedrooms"
+                        name="bedrooms"
+                        value={property.bedrooms}
+                        required
+                        onchange={handleChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Bathrooms -->
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-small-size_1-of-1">
+                    <lightning-input
+                        type="number"
+                        label="Bathrooms"
+                        name="bathrooms"
+                        value={property.bathrooms}
+                        required
+                        onchange={handleChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Area -->
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-small-size_1-of-1">
+                    <lightning-input
+                        type="number"
+                        label="Area (Sq Ft)"
+                        name="area"
+                        value={property.area}
+                        required
+                        onchange={handleChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- City -->
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-small-size_1-of-1">
+                    <lightning-input
+                        label="City"
+                        name="city"
+                        value={property.city}
+                        required
+                        onchange={handleChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Builder -->
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-small-size_1-of-1">
+                    <lightning-input
+                        label="Builder"
+                        name="builder"
+                        value={property.builder}
+                        required
+                        onchange={handleChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Status -->
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-small-size_1-of-1">
+                    <lightning-combobox
+                        label="Status"
+                        name="status"
+                        value={property.status}
+                        placeholder="Select Status"
+                        options={statusOptions}
+                        required
+                        onchange={handleChange}>
+                    </lightning-combobox>
+                </div>
+
+                <!-- Image URL -->
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-small-size_1-of-1">
+                    <lightning-input
+                        type="url"
+                        label="Image URL"
+                        name="imageUrl"
+                        value={property.imageUrl}
+                        onchange={handleChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Description -->
+                <div class="slds-col slds-size_1-of-1">
+                    <lightning-textarea
+                        label="Description"
+                        name="description"
+                        value={property.description}
+                        onchange={handleChange}>
+                    </lightning-textarea>
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="slds-align_absolute-center slds-m-top_large">
+
+                <lightning-button
+                   label="Reset"
+                   onclick={handleReset}
+                   disabled={isLoading}
+                   class="slds-m-right_small">
+                </lightning-button>
+
+                <lightning-button
+                    variant="brand"
+                    label="Save Property"
+                    onclick={handleSave}
+                    disabled={isLoading}>
+                </lightning-button>
+
+            </div>
+
+        </div>
+
+    </lightning-card>
+</template>
