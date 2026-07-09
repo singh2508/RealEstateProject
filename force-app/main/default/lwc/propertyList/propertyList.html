@@ -1,0 +1,47 @@
+<template>
+    <lightning-card
+        title="Property List"
+        icon-name="standard:household">
+        <div class="slds-grid slds-wrap slds-gutters">
+    <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-2 slds-size_1-of-1">
+         <lightning-input
+             type="search"
+             label="Search Property"
+             placeholder="Search by Property Name"
+             onchange={handleSearch}>
+        </lightning-input>
+        <!-- Search -->
+    </div>
+
+      <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-2 slds-size_1-of-1">
+        <!-- Property Type -->
+          <lightning-combobox
+             label="Property Type"
+             value={selectedPropertyType}
+             options={propertyTypeOptions}
+             onchange={handlePropertyTypeFilter}>
+          </lightning-combobox>
+    </div>
+
+     <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-2 slds-size_1-of-1">
+        <!-- Status -->
+         <lightning-combobox
+             label="Status Type"
+             value={selectedStatus}
+             options={statusOptions}
+             onchange={handleStatusFilter}>
+          </lightning-combobox>
+    </div>
+</div>
+<br/>
+<br/>
+        <lightning-datatable
+            key-field="Id"
+            data={properties}
+            columns={columns}
+            hide-checkbox-column
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </lightning-card>
+</template>
+    

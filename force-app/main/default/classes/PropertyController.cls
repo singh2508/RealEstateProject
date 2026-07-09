@@ -22,5 +22,20 @@ public with sharing class PropertyController {
 
         return property.Id;
     }
+
+    @AuraEnabled(cacheable=true)
+     public static List<Property__c> getProperties() {
+
+        return [
+        SELECT Id,
+               Name,
+               Property_Type__c,
+               Price__c,
+               City__c,
+               Status__c
+        FROM Property__c
+        ORDER BY CreatedDate DESC
+    ];
+}
     
 }
